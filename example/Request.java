@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Request {
+public class Request { 
 
     public static void main(String[] args) throws IOException {
         SimpleApi data = new SimpleApi();

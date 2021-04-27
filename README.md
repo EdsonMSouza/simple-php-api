@@ -21,7 +21,7 @@ Changes should be updated via <code>composer dump-autoload -o</code> on your loc
 
 # Documentation
 Below are shown the resources available for using the API.
-After installation on the server, you can use the [examples](https://github.com/EdsonMSouza/simple-php-api/tree/main/example) on how to use API data with: Node.js, PHP and Python, or try online (see [try online](#tryonline))
+After installation on the server, you can use the [examples](https://github.com/EdsonMSouza/simple-php-api/tree/main/example) on how to use API data with: Node.js, PHP and Python, or [try online](#tryonline).
 
 ## Structure
 ```

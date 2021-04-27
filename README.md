@@ -48,7 +48,7 @@ CREATE DATABASE <name>;
 
 ```sql
 CREATE TABLE users (
-    id          INT(3) 	  NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id          INT(3) 	    NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name        VARCHAR(50) NOT NULL,
     email       VARCHAR(50) NOT NULL,
     username    VARCHAR(20) NOT NULL,

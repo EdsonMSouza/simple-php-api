@@ -19,9 +19,6 @@ If you want, collaborate in this repository any improvements that have been made
 ## Composer
 Changes should be updated via <code>composer dump-autoload -o</code> on your local machine.
 
-## Try Online
-To test this API, use the URI: [http://emsapi.esy.es/rest](http://emsapi.esy.es/rest).
-
 # Documentation
 Below are shown the resources available for using the API.
 After installation on the server, you can use the [examples](https://github.com/EdsonMSouza/simple-php-api/tree/main/example) on how to use API data with: Node.js, PHP and Python.
@@ -51,7 +48,7 @@ CREATE DATABASE <name>;
 
 ```sql
 CREATE TABLE users (
-    id          INT(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id          INT(3) 		NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name        VARCHAR(50) NOT NULL,
     email       VARCHAR(50) NOT NULL,
     username    VARCHAR(20) NOT NULL,
@@ -300,6 +297,14 @@ header = {
 ```
 
 ------
+
+## Try Online
+To test this API online, use: 
+
++ URI: [http://emsapi.esy.es/rest](http://emsapi.esy.es/rest) (see [examples](https://github.com/EdsonMSouza/simple-php-api/tree/main/example))
++ Authorization: <code>123</code> or <code>567</code>
++ username: john
++ password: doe
 
 ### How to cite this content
 

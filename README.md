@@ -21,7 +21,7 @@ Changes should be updated via <code>composer dump-autoload -o</code> on your loc
 
 # Documentation
 Below are shown the resources available for using the API.
-After installation on the server, you can use the [examples](https://github.com/EdsonMSouza/simple-php-api/tree/main/example) on how to use API data with: Node.js, PHP and Python.
+After installation on the server, you can use the [examples](https://github.com/EdsonMSouza/simple-php-api/tree/main/example) on how to use API data with: Node.js, PHP and Python, or try online (see [Try Online](#tryonline))
 
 ## Structure
 ```
@@ -299,12 +299,13 @@ header = {
 ------
 
 ## Try Online
+<a name="tryonline"></a>
 To test this API online, use: 
 
 + URI: [http://emsapi.esy.es/rest](http://emsapi.esy.es/rest) (see [examples](https://github.com/EdsonMSouza/simple-php-api/tree/main/example))
 + Authorization: <code>123</code> or <code>567</code>
-+ username: john
-+ password: doe
++ username: <code>john</code>
++ password: <code>doe</code>
 
 ### How to cite this content
 

@@ -69,9 +69,9 @@ To use the API, include the access Token in <code>src\User\UserModel.php</code> 
 A suggestion for improvement this API is a Token distribution system.
 
 # _Resources_
-|      URI      |  Method  |
-|:-------------:|:--------:|
-| /api/**new**/ |   POST   |
+| Resource |      URI      |  Method  |
+|:--------:|:-------------:|:--------:|
+|  **NEW** | /api/**new**/ | **POST** |
 ---
 
 ```json
@@ -120,9 +120,9 @@ header = {
 
 ---
 
-|      URI      |  Method  |
-|:-------------:|:--------:|
-| /api/**search**/ |   POST   |
+| Resource |      URI      |  Method  |
+|:--------:|:-------------:|:--------:|
+|  **SEARCH** | /api/**search**/ | **POST** |
 
 ```json
 url = 'http://URI/api/search/';
@@ -164,9 +164,9 @@ header = {
 
 ---
 
-|      URI      |  Method  |
-|:-------------:|:--------:|
-| /api/**update**/ |   PUT   |
+| Resource |      URI      |  Method  |
+|:--------:|:-------------:|:--------:|
+|  **UPDATE** | /api/**update**/ | **PUT** |
 
 ```json
 url = 'http://URI/api/update/';

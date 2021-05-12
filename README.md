@@ -120,7 +120,9 @@ header = {
 
 ---
 
-### <code>api/search/</code> - Method: **POST:**
+|      URI      |  Method  |
+|:-------------:|:--------:|
+| /api/**search**/ |   POST   |
 
 ```json
 url = 'http://URI/api/search/';
@@ -162,7 +164,9 @@ header = {
 
 ---
 
-### <code>api/update/</code> - Method: **PUT:**
+|      URI      |  Method  |
+|:-------------:|:--------:|
+| /api/**update**/ |   PUT   |
 
 ```json
 url = 'http://URI/api/update/';

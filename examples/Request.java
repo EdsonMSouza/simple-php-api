@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Request { 
+public class Request {
 
     public static void main(String[] args) throws IOException {
         SimpleApi data = new SimpleApi();
@@ -41,13 +41,18 @@ class SimpleApi {
         } catch (IOException e) {
         }
 
-        try (BufferedReader br = new BufferedReader(
-                new InputStreamReader(urlConnection.getInputStream(), "utf-8"))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream(), "utf-8"))) {
 
             String responseLine = null;
+            String r = null;
+
             while ((responseLine = br.readLine()) != null) {
+                r = responseLine;
                 System.out.println(responseLine.trim());
             }
+
+            User dd = gson.fromJson(r, User.class);
+            System.out.println(dd.toString());
         }
     }
 }
@@ -62,11 +67,10 @@ class User {
     public String email;
     public String username;
     public String password;
-    public String status;
-    public String info;
+    public String message;
 
     @Override
     public String toString() {
-        return "{" + "id=" + id + ", name=" + name + ", email=" + email + ", username=" + username + ", password=" + password + ", status=" + status + ", info=" + info + '}';
+        return "id=" + id + "\nname=" + name + "\nemail=" + email + "\nmessage=" + message + '}';
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 # Search example, try with "new" and "update" (see documentation)
-$url = 'http://URI/api/search/';
+$url = 'http://emsapi.esy.es/rest/api/search/';
 $token = '123';
 
 $array = array(

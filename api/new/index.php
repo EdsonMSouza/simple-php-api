@@ -14,24 +14,24 @@ try {
             $args = json_decode( file_get_contents( 'php://input' ), TRUE );
 
             if ( $data === null && json_last_error() !== JSON_ERROR_NONE ) {
-                echo json_encode( [ ['status' => '403', 'info' => 'Payload Precondition Failed'] ] );
+                echo json_encode( [ 'message' => 'Payload Precondition Failed'] );
                 die();
             }
 
             if ( !isset( $headers['Authorization'] ) ) {
-                echo json_encode( [ ['status' => '402', 'info' => 'Invalid or Missing Token'] ] );
+                echo json_encode( [ 'message' => 'Invalid or Missing Token'] );
 
                 die();
             }
 
             if ( sizeof( $args ) != 4 ) {
-                echo json_encode( [ ['status' => '102', 'info' => 'Invalid Arguments Number (Expected Four)'] ] );
+                echo json_encode( [ 'message' => 'Invalid Arguments Number (Expected Four)'] );
 
                 die();
             }
 
         } catch ( \Exception $ex ) {
-            echo json_encode( [ ['status:' => '400', 'info' => 'Bad Request (Invalid Syntax)'] ] );
+            echo json_encode( [ 'message' => 'Bad Request (Invalid Syntax)'] );
         }
 
         # Load classes
@@ -41,12 +41,12 @@ try {
         # Access TOKEN verification
         try {
             if ( !$userModel->auth( $headers['Authorization'] ) ) {
-                echo json_encode( [ ['status' => '401', 'info' => 'Token Refused'] ] );
+                echo json_encode( [ 'message' => 'Token Refused'] );
                 die();
             }
 
         } catch ( \Exception $ex ) {
-            echo json_encode( [ ['status' => '407', 'info' => $ex->getMessage()] ] );
+            echo json_encode( [ 'message' => $ex->getMessage()] );
             die();
         }
 
@@ -59,12 +59,12 @@ try {
             ( !isset( $data->password ) ? array_push( $err, 1 ):NULL );
 
             if ( sizeof( $err ) > 0 ) {
-                echo json_encode( [ ['status' => '403', 'info' => 'Payload Precondition Failed'] ] );
+                echo json_encode( [ 'message' => 'Payload Precondition Failed'] );
                 die();
             }
 
         } catch ( \Exception $ex ) {
-            echo json_encode( [ ['status' => '406', 'info' => $ex->getMessage()] ] );
+            echo json_encode( [ 'message' => $ex->getMessage()] );
             die();
         }
 
@@ -73,7 +73,7 @@ try {
             $user->setPassword( strip_tags( $data->password ) );
 
             if ( $userModel->checkUser( $user ) ) {
-                echo json_encode( [ ['status' => '104', 'info' => 'User Already Exists'] ] );
+                echo json_encode( [ 'message' => 'User Already Exists'] );
                 die();
             }
 
@@ -86,21 +86,21 @@ try {
             );
 
             if ( $insert ) {
-                echo json_encode( [ ['status' => '101', 'info' => 'User Successfully Added'] ] );
+                echo json_encode( ['message' => 'User Successfully Added'] );
             } else {
-                echo json_encode( [ ['status' => '103', 'info' => 'Could Not Add User'] ] );
+                echo json_encode( [ 'message' => 'Could Not Add User'] );
             }
             die();
 
         } catch ( \PDOException $e ) {
-            echo json_encode( [ ['status' => '405', 'info' => SQLMessage( $e->getCode() ) ] ] );
+            echo json_encode( [ 'message' => SQLMessage( $e->getCode() ) ] );
             die();
         }
     } else {
-        echo json_encode( [ ['status' => '404', 'info' => 'Method Not Allowed' ] ] );
+        echo json_encode( [ 'message' => 'Method Not Allowed' ] );
         die();
     }
 } catch( \Exception $ex ) {
-    echo json_encode( [ ['status' => '406', 'info' => $ex->getMessage() ] ] );
+    echo json_encode( [ 'message' => $ex->getMessage() ] );
     die();
 }

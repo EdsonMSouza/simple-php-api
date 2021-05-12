@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = 'http://URI/api'
+url = 'http://emsapi.esy.es/rest/api/'
 token = "123"
 
 def insert(name, email, username, password):
@@ -65,6 +65,6 @@ def update(name, email, username, password):
 # Examples - Uncomment to try
 
 #insert("Full Name", "email@domain.com", "john", "doe")
-#search("john", "doe")
+# search("john", "doe")
 #update("Full Name", "email@domain.com", "john", "doe")
 #search("john", "doe")

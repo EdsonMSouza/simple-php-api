@@ -69,9 +69,9 @@ To use the API, include the access Token in <code>src\User\UserModel.php</code> 
 A suggestion for improvement this API is a Token distribution system.
 
 # _Resources_
-| URI              | Method   |
-|------------------|----------|
-| URI/api/**new**/ | **POST** |
+|      URI      |  Method  |
+|:-------------:|:--------:|
+| /api/**new**/ | **POST** |
 ---
 
 ```json

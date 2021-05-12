@@ -71,7 +71,7 @@ A suggestion for improvement this API is a Token distribution system.
 # _Resources_
 |      URI      |  Method  |
 |:-------------:|:--------:|
-| /api/**new**/ | **POST** |
+| /api/**new**/ |   POST   |
 ---
 
 ```json
